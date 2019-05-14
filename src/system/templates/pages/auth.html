@@ -9,7 +9,11 @@
     <!--sign up-->
     <sa-signup *ngIf="authType === 'signup'"></sa-signup>
     <!--page not found-->
-    <sa-page-not-found *ngIf="authType !== 'signin' && authType !== 'signup'"></sa-page-not-found>
+    <sa-page-not-found *ngIf="authType !== 'signin' && authType !== 'signup' && authType !=='activate-account'"></sa-page-not-found>
+    <!--Email sent-->
+    <div class="text-white" *ngIf="authType === 'activate-account'">
+      <h5 class="mt-5 text-center p-2">An email has been sent to <span class="text-blue font-weight-bold">{{email}}</span> to activate account</h5>
+    </div>
   </div>
 </div>
 

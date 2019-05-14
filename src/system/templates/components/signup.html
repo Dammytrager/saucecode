@@ -1,1 +1,76 @@
-sign up
+<div class="sa-signin">
+  <div class="form-container">
+    <div class="header mb-3">
+      <h4 class="text-blue font-weight-bold text-center">Open Account</h4>
+    </div>
+    <form [formGroup]="signupForm">
+      <!--fullname-->
+      <div class="form-group">
+        <label for="fullname" [ngClass]="classes(fullname)">Fullname</label>
+        <input type="text" id="fullname" placeholder="surname first"
+               formControlName="fullname" class="form-control">
+        <!--errors-->
+        <div *ngIf="fullname.errors && fullname.touched">
+          <small *ngIf="fullname.errors.required" class="text-red">
+            This field is required
+          </small>
+        </div>
+      </div>
+
+      <!--email-->
+      <div class="form-group">
+        <label for="email" [ngClass]="classes(email)">Email Address</label>
+        <input type="email" id="email"
+               formControlName="email" class="form-control">
+        <!--errors-->
+        <div *ngIf="email.errors && email.touched">
+          <small *ngIf="email.errors.required" class="text-red">
+            This field is required
+          </small>
+          <small *ngIf="!email.errors.required && email.errors.patternFail" class="text-red">
+            Invalid Email
+          </small>
+        </div>
+      </div>
+
+      <!--phone number-->
+      <div class="form-group">
+        <label for="phone_no" [ngClass]="classes(phone_no)">Mobile Number</label>
+        <input type="text" id="phone_no" placeholder="080xxxxxxxx"
+               formControlName="phone_no" class="form-control">
+        <!--errors-->
+        <div *ngIf="phone_no.errors && phone_no.touched">
+          <small *ngIf="phone_no.errors.required" class="text-red">
+            This field is required
+          </small>
+          <small *ngIf="!phone_no.errors.required && phone_no.errors.patternFail" class="text-red">
+            Invalid Mobile no
+          </small>
+        </div>
+      </div>
+
+      <!--password-->
+      <div class="form-group">
+        <label for="password" [ngClass]="classes(password)">Password</label>
+        <input type="password" id="password"
+               formControlName="password" class="form-control">
+        <!--errors-->
+        <div *ngIf="password.errors && password.touched">
+          <small *ngIf="password.errors.required" class="text-red">
+            This field is required
+          </small>
+          <small *ngIf="!password.errors.required && password.errors.minlength" class="text-red">
+            Password must contain at least 6 characters
+          </small>
+        </div>
+      </div>
+
+      <div class="sign-prompt small my-3">
+        Have an account? <a [routerLink]="['/auth', 'signin']" class="text-green font-weight-bold sign-link">sign in</a>
+      </div>
+      <!--submit button-->
+      <button class="btn btn-block" [disabled]="signupForm.invalid" [class.disabled]="signupForm.invalid">Sign up</button>
+    </form>
+  </div>
+</div>
+

@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
-import {NgRedux} from '@angular-redux/store';
+import {NgRedux, select} from '@angular-redux/store';
 import {IAppState} from '../system/state/interfaces';
 import {CHANGE_ROUTE} from 'src/system/state/actions';
 
@@ -8,7 +8,7 @@ import {CHANGE_ROUTE} from 'src/system/state/actions';
   selector: 'sa-root',
   templateUrl: '../system/templates/sa-container.html'
 })
-export class SaComponent implements OnInit{
+export class SaComponent implements OnInit {
   constructor(
     private _router: Router,
     private _ngRedux: NgRedux<IAppState>,
@@ -25,7 +25,14 @@ export class SaComponent implements OnInit{
           type: CHANGE_ROUTE,
           route: data.urlAfterRedirects
         });
+        this.autoNavigate(data.urlAfterRedirects);
       }
     });
+  }
+
+  autoNavigate(route) {
+    if (route === '/') {
+      this._router.navigate(['/auth', 'signin']);
+    }
   }
 }

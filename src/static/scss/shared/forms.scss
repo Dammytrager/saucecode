@@ -11,6 +11,13 @@ form {
     }
   }
 
+  .is-invalid {
+    &:focus {
+      border-color: $danger !important;
+      box-shadow: none !important;
+    }
+  }
+
   .btn  {
     background-color: $mid-green;
     color: $white;
@@ -20,6 +27,16 @@ form {
     }
     &:hover {
       background-color: $dark-green;
+      color: $white;
+    }
+  }
+
+  .disabled {
+    cursor: not-allowed !important;
+    background-color: $light-green;
+    &:hover {
+      background-color: $light-green !important;
+      color: $white;
     }
   }
 }

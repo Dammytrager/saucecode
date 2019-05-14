@@ -6,19 +6,37 @@
     <form [formGroup]="signinForm">
       <!--email-->
       <div class="form-group">
-        <label for="email" class="text-green">Email Address</label>
-        <input type="email" id="email" class="form-control">
+        <label for="email" [ngClass]="classes(email)">Email Address</label>
+        <input type="email" id="email"
+               formControlName="email" class="form-control">
+        <!--errors-->
+        <div *ngIf="email.errors && email.touched">
+          <small *ngIf="email.errors.required" class="text-red">
+            This field is required
+          </small>
+          <small *ngIf="!email.errors.required && email.errors.patternFail" class="text-red">
+            Invalid Email
+          </small>
+        </div>
       </div>
+
       <!--password-->
       <div class="form-group">
-        <label for="password" class="text-green">Password</label>
-        <input type="password" id="password" class="form-control">
+        <label for="password" [ngClass]="classes(password)">Password</label>
+        <input type="password" id="password"
+               formControlName="password" class="form-control">
+        <!--errors-->
+        <div *ngIf="password.errors && password.touched">
+          <small *ngIf="password.errors.required" class="text-red">
+            This field is required
+          </small>
+        </div>
       </div>
       <div class="sign-prompt small my-3">
         Don't have an account? <a [routerLink]="['/auth', 'signup']" class="text-green font-weight-bold sign-link">sign up</a>
       </div>
       <!--submit button-->
-      <button class="btn btn-primary btn-block">Sign in</button>
+      <button class="btn btn-block" [disabled]="signinForm.invalid" [class.disabled]="signinForm.invalid">Sign in</button>
     </form>
   </div>
 </div>

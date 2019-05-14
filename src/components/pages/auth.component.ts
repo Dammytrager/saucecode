@@ -9,6 +9,8 @@ import {Observable, Subscription} from 'rxjs';
 })
 export class AuthComponent implements OnInit, OnDestroy {
   $route$: Subscription;
+  $queryParam$: Subscription;
+  email;
   authType;
 
   constructor(private route: ActivatedRoute) {}
@@ -20,6 +22,9 @@ export class AuthComponent implements OnInit, OnDestroy {
   getRoute() {
     this.$route$ = this.route.paramMap.subscribe((data: any) => {
       this.authType = data.params.type;
+    });
+    this.$queryParam$ = this.route.queryParams.subscribe((data) => {
+      this.email = data.email;
     });
   }
 
