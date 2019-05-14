@@ -14,18 +14,22 @@ import {environment} from '../../environments/environment';
 import {AuthComponent} from '../../components/pages/auth.component';
 import {SigninComponent} from '../../components/components/signin.component';
 import {SignupComponent} from '../../components/components/signup.component';
+import {PageNotFoundComponent} from '../../components/components/page-not-found.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     SaComponent,
     AuthComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     SaRoutingModule,
-    NgReduxModule
+    NgReduxModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [SaComponent]

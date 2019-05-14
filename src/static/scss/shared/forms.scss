@@ -1,0 +1,26 @@
+form {
+  label {
+    font-size: 14px;
+    font-weight: bolder;
+  }
+
+  .form-control {
+    &:focus {
+      box-shadow: none;
+      border-color: $mid-green;
+    }
+  }
+
+  .btn  {
+    background-color: $mid-green;
+    color: $white;
+    border: none;
+    &:focus {
+      box-shadow: none;
+    }
+    &:hover {
+      background-color: $dark-green;
+    }
+  }
+}
+

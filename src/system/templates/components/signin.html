@@ -1,0 +1,24 @@
+<div class="sa-signin">
+  <div class="form-container">
+    <div class="header mb-3">
+      <h4 class="text-blue font-weight-bold text-center">Dashboard Login</h4>
+    </div>
+    <form [formGroup]="signinForm">
+      <!--email-->
+      <div class="form-group">
+        <label for="email" class="text-green">Email Address</label>
+        <input type="email" id="email" class="form-control">
+      </div>
+      <!--password-->
+      <div class="form-group">
+        <label for="password" class="text-green">Password</label>
+        <input type="password" id="password" class="form-control">
+      </div>
+      <div class="sign-prompt small my-3">
+        Don't have an account? <a [routerLink]="['/auth', 'signup']" class="text-green font-weight-bold sign-link">sign up</a>
+      </div>
+      <!--submit button-->
+      <button class="btn btn-primary btn-block">Sign in</button>
+    </form>
+  </div>
+</div>

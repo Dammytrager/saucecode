@@ -1,1 +1,15 @@
-auth page
+<div class="sa-auth">
+  <div class="sa-auth__container">
+    <div class="sa-auth__title mb-4">
+      <h1 class="text-white text-center font-weight-bold">BCUI App</h1>
+      <p class="small text-white text-center font-weight-bold">Bank Customer Unique Identifier App</p>
+    </div>
+    <!--Sign in-->
+    <sa-signin *ngIf="authType === 'signin'"></sa-signin>
+    <!--sign up-->
+    <sa-signup *ngIf="authType === 'signup'"></sa-signup>
+    <!--page not found-->
+    <sa-page-not-found *ngIf="authType !== 'signin' && authType !== 'signup'"></sa-page-not-found>
+  </div>
+</div>
+

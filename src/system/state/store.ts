@@ -1,14 +1,14 @@
 import { IAppState } from './interfaces';
-import {CHANGE_TEXT} from './actions';
+import {CHANGE_ROUTE} from './actions';
 
 export const INITIAL_STATE: IAppState = {
-  text: ''
+  route: ''
 };
 export function reducerApp(state, action) {
   switch (action.type) {
-    case CHANGE_TEXT:
+    case CHANGE_ROUTE:
       return Object.assign({}, state, {
-        text: action.text
+        route: action.route
       });
   }
   return state;
