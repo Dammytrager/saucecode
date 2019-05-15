@@ -17,6 +17,7 @@ import {SignupComponent} from '../../components/components/signup.component';
 import {PageNotFoundComponent} from '../../components/components/page-not-found.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {LoaderComponent} from '../../components/components/loader.component';
+import {DashboardComponent} from '../../components/pages/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {LoaderComponent} from '../../components/components/loader.component';
     SigninComponent,
     SignupComponent,
     PageNotFoundComponent,
-    LoaderComponent
+    LoaderComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
