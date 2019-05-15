@@ -12,6 +12,7 @@ export class AuthComponent implements OnInit, OnDestroy {
   $queryParam$: Subscription;
   email;
   authType;
+  token;
 
   constructor(private route: ActivatedRoute) {}
 
@@ -25,6 +26,8 @@ export class AuthComponent implements OnInit, OnDestroy {
     });
     this.$queryParam$ = this.route.queryParams.subscribe((data) => {
       this.email = data.email;
+      this.token = data.tk;
+      console.log(data);
     });
   }
 

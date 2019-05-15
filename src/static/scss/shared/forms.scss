@@ -1,43 +1,60 @@
-form {
-  label {
-    font-size: 14px;
-    font-weight: bolder;
-  }
+label {
+  font-size: 14px;
+  font-weight: bolder;
+}
 
-  .form-control {
-    &:focus {
-      box-shadow: none;
-      border-color: $mid-green;
-    }
+.form-control {
+  &:focus {
+    box-shadow: none;
+    border-color: $mid-green;
   }
+}
 
-  .is-invalid {
-    &:focus {
-      border-color: $danger !important;
-      box-shadow: none !important;
-    }
+.is-invalid {
+  &:focus {
+    border-color: $danger !important;
+    box-shadow: none !important;
   }
+}
 
-  .btn  {
-    background-color: $mid-green;
+.btn  {
+  color: $white !important;
+  border: none !important;
+  &:focus {
+    box-shadow: none !important;
+  }
+}
+
+.btn-green  {
+  background-color: $mid-green !important;
+  &:hover {
+    background-color: $dark-green !important;
+    color: $white !important;
+  }
+}
+
+.btn-blue  {
+  background-color: $blue !important;
+  &:hover {
+    opacity: 0.9;
+    color: $white !important;
+  }
+}
+
+.btn-red  {
+  background-color: $danger !important;
+  &:hover {
+    opacity: 0.9;
+    color: $white !important;
+  }
+}
+
+.disabled {
+  cursor: not-allowed !important;
+  background-color: $light-green;
+  &:hover {
+    background-color: $light-green !important;
     color: $white;
-    border: none;
-    &:focus {
-      box-shadow: none;
-    }
-    &:hover {
-      background-color: $dark-green;
-      color: $white;
-    }
-  }
-
-  .disabled {
-    cursor: not-allowed !important;
-    background-color: $light-green;
-    &:hover {
-      background-color: $light-green !important;
-      color: $white;
-    }
   }
 }
 
