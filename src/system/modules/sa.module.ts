@@ -16,6 +16,7 @@ import {SigninComponent} from '../../components/components/signin.component';
 import {SignupComponent} from '../../components/components/signup.component';
 import {PageNotFoundComponent} from '../../components/components/page-not-found.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {LoaderComponent} from '../../components/components/loader.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     AuthComponent,
     SigninComponent,
     SignupComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
