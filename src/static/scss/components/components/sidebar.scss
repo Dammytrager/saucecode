@@ -1,0 +1,73 @@
+.sa-sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 200px;
+  overflow-x: hidden;
+  background-color: $blue;
+  height: 100vh;
+  padding: 0;
+  &__icon {
+    margin: 1rem auto;
+    padding: 0.3rem;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(92,219,149,0.5);
+    }
+    @media (max-width: 400px) {
+      margin: 1rem auto;
+    }
+    .icon {
+      color: $white;
+      font-size: 26px;
+      @media (max-width: 400px) {
+        font-size: 20px;
+      }
+    }
+  }
+  .active {
+    background-color: rgba(92,219,149,0.5) !important;
+  }
+  &__text {
+    font-size: 20px;
+    width: 125px;
+    text-align: right;
+  }
+  &__bottom {
+    .bottom-icon  {
+      margin: 0 auto !important;
+      border-top: solid 1px grey;
+      background-color: $danger;
+      .text {
+        font-size: 22px;
+      }
+    }
+  }
+  .add {
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    .icon {
+      font-size: 18px;
+    }
+  }
+
+  .disabled {
+    pointer-events: none;
+    color: #aaaaaa !important;
+  }
+}
+.sa-sidebar.expanded {
+  position: relative;
+  left: 0;
+  top: 0;
+  transition: all .2s;
+}
+.sa-sidebar.collapsed  {
+  position: relative;
+  left: -140px;
+  transition: all .2s;
+  &__icon {
+    width: 35px;
+    height: 35px;
+  }
+}

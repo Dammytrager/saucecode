@@ -1,0 +1,66 @@
+<div class="sa-sidebar" [ngClass]="sideBarClasses">
+  <!--Options-->
+  <div class="sa-sidebar__top">
+    <div
+      class="sa-sidebar__icon text-white d-flex justify-content-center align-items-center"
+      [class.active]="type === 'home'"
+      (click)="navigate('home')"
+      title="Home">
+      <div class="d-flex align-items-center">
+        <span *ngIf="true" class="mr-4 d-inline-block sa-sidebar__text">Home</span>
+        <fa-icon class="icon home" [icon]="faHome"></fa-icon>
+      </div>
+    </div>
+    <div
+      class="sa-sidebar__icon text-white d-flex justify-content-center align-items-center"
+      [class.active]="type === 'transaction 1'"
+      (click)="navigate('transaction 1')"
+      title="Transaction 1">
+      <div class="d-flex align-items-center">
+        <span *ngIf="true" class="mr-4 d-inline-block sa-sidebar__text">Transaction 1</span>
+        <fa-icon class="icon home" [icon]="faBroadcastTower"></fa-icon>
+      </div>
+    </div>
+    <div
+      class="sa-sidebar__icon text-white d-flex justify-content-center align-items-center"
+      [class.active]="type === 'transaction 2'"
+      (click)="navigate('transaction 2')"
+      title="Transaction 2">
+      <div class="d-flex align-items-center">
+        <span *ngIf="true" class="mr-4 d-inline-block sa-sidebar__text">Transaction 2</span>
+        <fa-icon class="icon" [icon]="faDesktop"></fa-icon>
+      </div>
+    </div>
+    <div
+      class="sa-sidebar__icon text-white d-flex justify-content-center align-items-center"
+      [class.active]="type === 'transaction 3'"
+      (click)="navigate('transaction 3')"
+      title="Transaction 3">
+      <div class="d-flex align-items-center">
+        <span *ngIf="true" class="mr-4 d-inline-block sa-sidebar__text">Transaction 3</span>
+        <fa-icon class="icon" [icon]="faMicrochip"></fa-icon>
+      </div>
+    </div>
+    <div
+      class="sa-sidebar__icon text-white d-flex justify-content-center align-items-center"
+      [class.active]="type === 'transaction 4'"
+      (click)="navigate('transaction 4')"
+      title="Transaction 4">
+      <div class="d-flex align-items-center">
+        <span *ngIf="true" class="mr-4 d-inline-block sa-sidebar__text">Transaction 4</span>
+        <fa-icon class="icon" [icon]="faDatabase"></fa-icon>
+      </div>
+    </div>
+  </div>
+  <!--expand button-->
+  <div class="sa-sidebar__bottom">
+    <div
+      class="sa-sidebar__icon bottom-icon text-white d-flex justify-content-center align-items-center"
+      [title]="expanded ? 'collapse' : 'expand'">
+      <div (click)="toggle()" class="d-flex align-items-center">
+        <span *ngIf="true" class="mr-4 d-inline-block sa-sidebar__text text">collapse</span>
+        <fa-icon class="icon" [icon]="expanded ? faAngleDoubleLeft : faAngleDoubleRight"></fa-icon>
+      </div>
+    </div>
+  </div>
+</div>

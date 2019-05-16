@@ -4,7 +4,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
   selector: 'sa-dashboard',
   templateUrl: '../../system/templates/pages/dashboard.html'
 })
-export class DashboardComponent implements OnInit, OnDestroy {
+export class DashboardComponent implements OnInit {
 
   constructor() {}
 

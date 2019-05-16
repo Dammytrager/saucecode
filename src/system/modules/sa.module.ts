@@ -18,6 +18,8 @@ import {PageNotFoundComponent} from '../../components/components/page-not-found.
 import {ReactiveFormsModule} from '@angular/forms';
 import {LoaderComponent} from '../../components/components/loader.component';
 import {DashboardComponent} from '../../components/pages/dashboard.component';
+import {SidebarComponent} from '../../components/components/sidebar.component';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -27,13 +29,15 @@ import {DashboardComponent} from '../../components/pages/dashboard.component';
     SignupComponent,
     PageNotFoundComponent,
     LoaderComponent,
-    DashboardComponent
+    DashboardComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
     SaRoutingModule,
     NgReduxModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [SaComponent]

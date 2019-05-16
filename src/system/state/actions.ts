@@ -1,1 +1,2 @@
 export const CHANGE_ROUTE = 'CHANGE_ROUTE';
+export const CHANGE_SIDEBAR = 'CHANGE_SIDEBAR';
