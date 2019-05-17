@@ -1,3 +1,23 @@
-<div class="sa-dashboard">
+<div class="sa-dashboard d-flex">
   <sa-sidebar></sa-sidebar>
+  <div class="sa-dashboard__page" [class.no-margin]="sidebar === 'expanded'">
+    <div class="avatar d-flex justify-content-end mb-3 mb-md-1">
+      <button class="btn btn-red">Log out &nbsp; <fa-icon [icon]="faSignOutAlt"></fa-icon></button>
+    </div>
+    <div class="logo">
+      <sa-logo [data]="{align: 'center'}"></sa-logo>
+    </div>
+    <div class="page-contents d-flex justify-content-center mt-4">
+      <div class="page-contents__home row mt-4" *ngIf="transaction === 'home'">
+        <div class="col-md-4" *ngFor="let transaction of transactions">
+          <div class="item mb-3" (click)="navigate(transaction.name)">
+            {{transaction.name | titlecase}}
+          </div>
+        </div>
+      </div>
+      <div *ngIf="transactionList.indexOf(transaction) !== -1">
+        {{transaction}}
+      </div>
+    </div>
+  </div>
 </div>

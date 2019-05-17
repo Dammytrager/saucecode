@@ -1,29 +1,21 @@
 import {Component, OnInit} from '@angular/core';
 import {
-  faBroadcastTower,
-  faDesktop,
-  faMicrochip,
-  faDatabase,
-  faAngleDoubleRight,
-  faAngleDoubleLeft, faHome
-} from '@fortawesome/free-solid-svg-icons';
+  faAngleDoubleRight, faAngleDoubleLeft, faHome} from '@fortawesome/free-solid-svg-icons';
 import {NgRedux} from '@angular-redux/store';
 import {IAppState} from '../../system/state/interfaces';
 import {CHANGE_SIDEBAR} from '../../system/state/actions';
 import {ActivatedRoute, Router} from '@angular/router';
+import {transactions} from '../../system/utilities/transactions';
 
 @Component({
   selector: 'sa-sidebar',
   templateUrl: '../../system/templates/components/sidebar.html'
 })
-export class SidebarComponent implements OnInit{
-  faBroadcastTower = faBroadcastTower;
-  faDesktop = faDesktop;
-  faMicrochip = faMicrochip;
-  faDatabase = faDatabase;
+export class SidebarComponent implements OnInit {
   faAngleDoubleRight = faAngleDoubleRight;
   faAngleDoubleLeft = faAngleDoubleLeft;
   faHome = faHome;
+  transactions = transactions;
   expanded = false;
   sideBarClasses = {
     'expanded': this.expanded,
@@ -37,7 +29,6 @@ export class SidebarComponent implements OnInit{
 
   ngOnInit() {
     this.route.paramMap.subscribe((data: any) => {
-      console.log(data.params.type);
       this.type = data.params.type;
     });
   }

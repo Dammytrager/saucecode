@@ -20,6 +20,7 @@ import {LoaderComponent} from '../../components/components/loader.component';
 import {DashboardComponent} from '../../components/pages/dashboard.component';
 import {SidebarComponent} from '../../components/components/sidebar.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {LogoComponent} from '../../components/components/logo.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
     PageNotFoundComponent,
     LoaderComponent,
     DashboardComponent,
-    SidebarComponent
+    SidebarComponent,
+    LogoComponent
   ],
   imports: [
     BrowserModule,

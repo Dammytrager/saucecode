@@ -1,6 +1,7 @@
 <div class="sa-sidebar" [ngClass]="sideBarClasses">
   <!--Options-->
   <div class="sa-sidebar__top">
+    <!--home-->
     <div
       class="sa-sidebar__icon text-white d-flex justify-content-center align-items-center"
       [class.active]="type === 'home'"
@@ -11,44 +12,16 @@
         <fa-icon class="icon home" [icon]="faHome"></fa-icon>
       </div>
     </div>
+    <!--transactions-->
     <div
       class="sa-sidebar__icon text-white d-flex justify-content-center align-items-center"
-      [class.active]="type === 'transaction 1'"
-      (click)="navigate('transaction 1')"
+      *ngFor="let transaction of transactions"
+      [class.active]="type === transaction.name"
+      (click)="navigate(transaction.name)"
       title="Transaction 1">
       <div class="d-flex align-items-center">
-        <span *ngIf="true" class="mr-4 d-inline-block sa-sidebar__text">Transaction 1</span>
-        <fa-icon class="icon home" [icon]="faBroadcastTower"></fa-icon>
-      </div>
-    </div>
-    <div
-      class="sa-sidebar__icon text-white d-flex justify-content-center align-items-center"
-      [class.active]="type === 'transaction 2'"
-      (click)="navigate('transaction 2')"
-      title="Transaction 2">
-      <div class="d-flex align-items-center">
-        <span *ngIf="true" class="mr-4 d-inline-block sa-sidebar__text">Transaction 2</span>
-        <fa-icon class="icon" [icon]="faDesktop"></fa-icon>
-      </div>
-    </div>
-    <div
-      class="sa-sidebar__icon text-white d-flex justify-content-center align-items-center"
-      [class.active]="type === 'transaction 3'"
-      (click)="navigate('transaction 3')"
-      title="Transaction 3">
-      <div class="d-flex align-items-center">
-        <span *ngIf="true" class="mr-4 d-inline-block sa-sidebar__text">Transaction 3</span>
-        <fa-icon class="icon" [icon]="faMicrochip"></fa-icon>
-      </div>
-    </div>
-    <div
-      class="sa-sidebar__icon text-white d-flex justify-content-center align-items-center"
-      [class.active]="type === 'transaction 4'"
-      (click)="navigate('transaction 4')"
-      title="Transaction 4">
-      <div class="d-flex align-items-center">
-        <span *ngIf="true" class="mr-4 d-inline-block sa-sidebar__text">Transaction 4</span>
-        <fa-icon class="icon" [icon]="faDatabase"></fa-icon>
+        <span *ngIf="true" class="mr-4 d-inline-block sa-sidebar__text">{{transaction.name | titlecase}}</span>
+        <fa-icon class="icon home" [icon]="transaction.icon"></fa-icon>
       </div>
     </div>
   </div>
