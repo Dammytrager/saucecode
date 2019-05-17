@@ -11,7 +11,7 @@ import {classes} from '../../system/utilities/functions';
 export class SigninComponent {
   signinForm = this.fb.group({
     email: ['', [Validators.required, patternMatch(REGEX.EMAIL)]],
-    password: ['', Validators.required]
+    password: ['', [Validators.required, Validators.minLength(6)]]
   });
   classes = classes;
   constructor(private fb: FormBuilder) {}

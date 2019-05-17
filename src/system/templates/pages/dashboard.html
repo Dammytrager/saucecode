@@ -1,4 +1,4 @@
-<div class="sa-dashboard d-flex">
+<div class="sa-dashboard d-flex" *ngIf="transactionList.indexOf(transaction) !== -1 || transaction === 'home'">
   <sa-sidebar></sa-sidebar>
   <div class="sa-dashboard__page" [class.no-margin]="sidebar === 'expanded'">
     <div class="avatar d-flex justify-content-end mb-3 mb-md-1">
@@ -21,3 +21,4 @@
     </div>
   </div>
 </div>
+<sa-page-not-found *ngIf="transactionList.indexOf(transaction) === -1"></sa-page-not-found>
