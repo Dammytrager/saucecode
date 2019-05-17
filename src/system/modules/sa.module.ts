@@ -21,6 +21,7 @@ import {DashboardComponent} from '../../components/pages/dashboard.component';
 import {SidebarComponent} from '../../components/components/sidebar.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {LogoComponent} from '../../components/components/logo.component';
+import {TransactionComponent} from '../../components/components/transaction.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {LogoComponent} from '../../components/components/logo.component';
     LoaderComponent,
     DashboardComponent,
     SidebarComponent,
-    LogoComponent
+    LogoComponent,
+    TransactionComponent
   ],
   imports: [
     BrowserModule,

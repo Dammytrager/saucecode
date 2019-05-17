@@ -28,8 +28,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.checkTransaction();
   }
 
-  navigate(route) {
-    this.router.navigate(['/dashboard', route]);
+  navigate(route?, main?) {
+    main = main ? main : '/dashboard';
+    this.router.navigate([main, route]);
   }
 
   checkTransaction() {

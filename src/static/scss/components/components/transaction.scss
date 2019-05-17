@@ -1,0 +1,32 @@
+.sa-transaction {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  &__item {
+    background-color: $white;
+    min-width: 350px;
+    min-height: 200px;
+    padding: 25px 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 40px rgba(52,58,64,.15);
+    @media (max-width: 450px) {
+      min-width: 275px;
+      padding: 25px;
+    }
+    .text-header  {
+      color: $danger;
+      font-weight: bold;
+      font-size: 20px;
+      border-bottom: 20px;
+    }
+  }
+  span {
+    cursor: pointer;
+    &:hover {
+      color: $dark-green;
+    }
+  }
+  .text-content {
+    font-size: 14px;
+  }
+}

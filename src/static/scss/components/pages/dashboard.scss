@@ -19,6 +19,9 @@
     }
     .avatar {
       max-height: 50px;
+      button  {
+        box-shadow: 0 0 40px rgba(294,69,55,.15);
+      }
     }
     .page-contents  {
       &__home {

@@ -1,0 +1,37 @@
+<div class="sa-transaction">
+  <div class="sa-transaction__item">
+    <div class="text-header text-center mb-4">
+      {{data | titlecase}}
+    </div>
+
+    <!--enter otp-->
+    <div *ngIf="verified !== 'true' && verified !=='false'">
+      <div class="text-content mb-3 text-blue font-weight-bold">
+        To proceed with the transaction, you have to verify that you are the owner of the account.<br>
+        A Unique key has been sent to your email for verification.
+      </div>
+      <form [formGroup]="otpForm" class="my-3">
+        <div class="form-group">
+          <input class="form-control" [class.is-invalid]="otpForm.invalid && otp.dirty" formControlName="otp" placeholder="enter unique key" type="text" id="otp">
+        </div>
+        <div class="button">
+          <button class="btn btn-green btn-block" [disabled]="otpForm.invalid" [class.disabled]="otpForm.invalid">Send</button>
+        </div>
+      </form>
+      <div class="text-right">
+        Did not recieve key? <span class="text-green">{{false ? 'resend key' : 'resending...'}}</span>
+      </div>
+    </div>
+
+    <!--correct otp-->
+    <div *ngIf="verified === 'true'" class="font-weight-bold text-center text-green">
+      You are verified You may proceed with your transaction
+    </div>
+
+    <!--wrong otp-->
+    <div *ngIf="verified === 'false'" class="text-red text-center font-weight-bold">
+      Access Denied!!! You entered a wrong unique identifier
+    </div>
+
+  </div>
+</div>

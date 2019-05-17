@@ -2,7 +2,7 @@
   <sa-sidebar></sa-sidebar>
   <div class="sa-dashboard__page" [class.no-margin]="sidebar === 'expanded'">
     <div class="avatar d-flex justify-content-end mb-3 mb-md-1">
-      <button class="btn btn-red">Log out &nbsp; <fa-icon [icon]="faSignOutAlt"></fa-icon></button>
+      <button class="btn btn-red" (click)="navigate('signin', 'auth')">Log out &nbsp; <fa-icon [icon]="faSignOutAlt"></fa-icon></button>
     </div>
     <div class="logo">
       <sa-logo [data]="{align: 'center'}"></sa-logo>
@@ -16,7 +16,7 @@
         </div>
       </div>
       <div *ngIf="transactionList.indexOf(transaction) !== -1">
-        {{transaction}}
+        <sa-transaction [transaction]="transaction"></sa-transaction>
       </div>
     </div>
   </div>
