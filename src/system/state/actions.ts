@@ -1,2 +1,4 @@
 export const CHANGE_ROUTE = 'CHANGE_ROUTE';
 export const CHANGE_SIDEBAR = 'CHANGE_SIDEBAR';
+export const CHANGE_SIGNED_IN = 'CHANGE_SIGNED_IN';
+export const CHANGE_USER = 'CHANGE_USER';

@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {select} from '@angular-redux/store';
 import {Observable, Subscription} from 'rxjs';
 
@@ -14,7 +14,7 @@ export class AuthComponent implements OnInit, OnDestroy {
   authType;
   token;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
     this.getRoute();
@@ -26,8 +26,7 @@ export class AuthComponent implements OnInit, OnDestroy {
     });
     this.$queryParam$ = this.route.queryParams.subscribe((data) => {
       this.email = data.email;
-      this.token = data.tk;
-      console.log(data);
+      this.token = data.token;
     });
   }
 

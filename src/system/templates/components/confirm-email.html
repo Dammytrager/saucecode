@@ -1,0 +1,20 @@
+<!-- Activated Account -->
+<div *ngIf="activated">
+  <h5 class="mt-5 font-weight-bold text-center text-white p-2">Your account has been activated</h5>
+  <div class="text-center mt-3">
+    <button class="btn btn-blue text-white" (click)="navigate('/dashboard', 'home')">Go to Dashboard</button>
+  </div>
+</div>
+
+<!-- Already Activated-->
+<div *ngIf="login">
+  <h5 class="mt-5 font-weight-bold text-center text-white p-2">
+    Your account has already been activated, Please
+    <a routerLink="/auth/signin">login</a>
+  </h5>
+</div>
+
+
+<div *ngIf="showLoader" class="text-center">
+  <sa-loader [data]="loaderData"></sa-loader>
+</div>

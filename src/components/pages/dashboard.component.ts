@@ -11,8 +11,11 @@ import {faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
 })
 export class DashboardComponent implements OnInit, OnDestroy {
   @select('sidebar') sidebar$: Observable<string>;
+  @select('signedIn') signedIn$: Observable<boolean>;
+  $signedIn$: Subscription;
   $sidebar$: Subscription;
   sidebar;
+  signedIn;
   faSignOutAlt = faSignOutAlt;
   transactions = transactions;
   transactionList = transactionlist;
@@ -25,7 +28,13 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.$sidebar$ = this.sidebar$.subscribe((data) => {
       this.sidebar = data;
     });
+    this.$signedIn$ = this.signedIn$.subscribe((data) => {
+      this.signedIn = data;
+    });
     this.checkTransaction();
+    if (!this.signedIn) {
+      this.navigate('signin', 'auth');
+    }
   }
 
   navigate(route?, main?) {

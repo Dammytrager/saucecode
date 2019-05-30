@@ -36,7 +36,12 @@
         Don't have an account? <a [routerLink]="['/auth', 'signup']" class="text-green font-weight-bold sign-link">sign up</a>
       </div>
       <!--submit button-->
-      <button class="btn btn-block btn-green" [disabled]="signinForm.invalid" [class.disabled]="signinForm.invalid">Sign in</button>
+      <button class="btn btn-block btn-green" [disabled]="signinForm.invalid || showLoader" [class.disabled]="signinForm.invalid || showLoader" (click)="signin()">
+        Sign in
+        <div class="float-right" *ngIf="showLoader">
+          <sa-loader [data]="loaderData"></sa-loader>
+        </div>
+      </button>
     </form>
   </div>
 </div>

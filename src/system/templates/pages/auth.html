@@ -1,7 +1,12 @@
 <div class="sa-auth">
   <div class="sa-auth__container">
     <!--logo-->
-    <sa-logo></sa-logo>
+    <sa-logo *ngIf="authType === 'signin' ||
+              authType === 'signup' ||
+              authType ==='activate-account' ||
+              authType === 'confirm_email'">
+    </sa-logo>
+
     <!--Sign in-->
     <sa-signin *ngIf="authType === 'signin'"></sa-signin>
     <!--sign up-->
@@ -11,18 +16,15 @@
       *ngIf=" authType !== 'signin' &&
               authType !== 'signup' &&
               authType !=='activate-account' &&
-              authType !== 'confirm-password'">
+              authType !== 'confirm_email'">
     </sa-page-not-found>
     <!--Email sent-->
     <div class="text-white" *ngIf="authType === 'activate-account'">
       <h5 class="mt-5 text-center p-2">An email has been sent to <span class="text-blue font-weight-bold">{{email}}</span> to activate account</h5>
     </div>
     <!--Email confirmed-->
-    <div class="mt-5" *ngIf="authType === 'confirm-password'">
-      <h5 class="mt-5 font-weight-bold text-center text-white p-2">Your account has been activated</h5>
-      <div class="text-center mt-3">
-        <button class="btn btn-blue text-white">Go to Dashboard</button>
-      </div>
+    <div class="mt-5" *ngIf="authType === 'confirm_email'">
+      <sa-confirm-email></sa-confirm-email>
     </div>
   </div>
 </div>

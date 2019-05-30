@@ -22,6 +22,10 @@ import {SidebarComponent} from '../../components/components/sidebar.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {LogoComponent} from '../../components/components/logo.component';
 import {TransactionComponent} from '../../components/components/transaction.component';
+import {HttpClientModule} from '@angular/common/http';
+import {ToastrModule, ToastrService} from 'ngx-toastr';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ConfirmEmailComponent} from '../../components/components/confirm-email.component';
 
 @NgModule({
   declarations: [
@@ -34,16 +38,20 @@ import {TransactionComponent} from '../../components/components/transaction.comp
     DashboardComponent,
     SidebarComponent,
     LogoComponent,
-    TransactionComponent
+    TransactionComponent,
+    ConfirmEmailComponent
   ],
   imports: [
     BrowserModule,
     SaRoutingModule,
     NgReduxModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [ToastrService],
   bootstrap: [SaComponent]
 })
 export class SaModule {
