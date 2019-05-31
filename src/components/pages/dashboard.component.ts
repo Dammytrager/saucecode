@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {select} from '@angular-redux/store';
 import {Observable, Subscription} from 'rxjs';
 import {faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
+import {OTPService} from '../../system/services/OTP.service';
 
 @Component({
   selector: 'sa-dashboard',
@@ -22,7 +23,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
   transaction;
 
   constructor(private router: Router,
-              private route: ActivatedRoute) {}
+              private route: ActivatedRoute,
+              private otp: OTPService) {}
 
   ngOnInit() {
     this.$sidebar$ = this.sidebar$.subscribe((data) => {
@@ -35,6 +37,10 @@ export class DashboardComponent implements OnInit, OnDestroy {
     if (!this.signedIn) {
       this.navigate('signin', 'auth');
     }
+  }
+
+  sendotp() {
+    this.otp.sendOtp();
   }
 
   navigate(route?, main?) {

@@ -15,11 +15,16 @@
           <input class="form-control" [class.is-invalid]="otpForm.invalid && otp.dirty" formControlName="otp" placeholder="enter unique key" type="text" id="otp">
         </div>
         <div class="button">
-          <button class="btn btn-green btn-block" [disabled]="otpForm.invalid" [class.disabled]="otpForm.invalid">Send</button>
+          <button class="btn btn-green btn-block" [disabled]="otpForm.invalid" [class.disabled]="otpForm.invalid || showLoader" (click)="verifyOtp()">
+            Send
+            <div class="float-right" *ngIf="showLoader">
+              <sa-loader [data]="loaderData"></sa-loader>
+            </div>
+          </button>
         </div>
       </form>
       <div class="text-right">
-        Did not recieve key? <span class="text-green">{{false ? 'resend key' : 'resending...'}}</span>
+        Did not recieve key? <span class="text-green" (click)="resend = !resend; sendOtp()">{{!resend ? 'resend key' : 'resending...'}}</span>
       </div>
     </div>
 

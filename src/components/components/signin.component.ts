@@ -57,6 +57,12 @@ export class SigninComponent {
             }
           });
         }
+        else if (data.message === `User with this email ${this.email.value} doesn\'t exist`) {
+          this.toast.error(data.message, 'Invalid Login');
+        }
+        else if (data.message === `password is incorrect`) {
+          this.toast.error(data.message, 'Invalid Login');
+        }
       }).catch(err => {
         this.toast.error('sign in failed');
       }).finally(() => {

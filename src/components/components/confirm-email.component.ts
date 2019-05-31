@@ -4,7 +4,7 @@ import {HttpService} from '../../system/services/http.service';
 import {Subscription} from 'rxjs';
 import {NgRedux} from '@angular-redux/store';
 import {IAppState} from '../../system/state/interfaces';
-import {CHANGE_USER} from '../../system/state/actions';
+import {CHANGE_SIGNED_IN, CHANGE_USER} from '../../system/state/actions';
 import {Loader} from '../../system/interfaces/loader';
 import {ToastrService} from 'ngx-toastr';
 
@@ -52,6 +52,7 @@ export class ConfirmEmailComponent implements OnInit, OnDestroy {
   }
 
   navigate(route, param?) {
+    this.ngRedux.dispatch({type: CHANGE_SIGNED_IN, signedIn: true});
     this.router.navigate([route, param]);
   }
 

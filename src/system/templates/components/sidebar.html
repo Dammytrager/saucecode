@@ -17,7 +17,7 @@
       class="sa-sidebar__icon text-white d-flex justify-content-center align-items-center"
       *ngFor="let transaction of transactions"
       [class.active]="type === transaction.name"
-      (click)="navigate(transaction.name)"
+      (click)="sendOtp(); navigate(transaction.name)"
       title="Transaction 1">
       <div class="d-flex align-items-center">
         <span *ngIf="true" class="mr-4 d-inline-block sa-sidebar__text">{{transaction.name | titlecase}}</span>
